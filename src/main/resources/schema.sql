@@ -1,0 +1,27 @@
+CREATE TABLE `registration` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `first_name` VARCHAR(45) NOT NULL,
+  `second_name` VARCHAR(45) NOT NULL,
+  `date_of_birth` VARCHAR(45) NOT NULL,
+  `status` SMALLINT UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `user` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `first_name` VARCHAR(45) NOT NULL,
+  `second_name` VARCHAR(45) NOT NULL,
+  `date_of_birth` VARCHAR(45) NOT NULL,
+  `type` SMALLINT UNSIGNED NOT NULL,
+  `status` SMALLINT UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `feature` (
+  `id` SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `permission` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` INT UNSIGNED NULL,
+  `feature_id` SMALLINT UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`));

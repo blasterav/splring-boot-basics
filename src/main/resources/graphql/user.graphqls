@@ -1,0 +1,12 @@
+type UserResponse {
+    id: ID!
+    firstName: String
+    secondName: String
+    dateOfBirth: String
+    type: Int!
+    status: Int!
+}
+
+extend type Query {
+    getUserById(id: Int): UserResponse!
+}

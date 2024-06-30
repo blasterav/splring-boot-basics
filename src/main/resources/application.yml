@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: "spring-boot-basics"
+  datasource:
+    url: "jdbc:mysql://localhost:3306/test"
+    username: "root"
+    password: "Password"
+  sql:
+    init:
+      mode: "always"
+  graphql:
+    graphiql:
+      enabled: true
+  modulith:
+    events:
+      jdbc:
+        schema-initialization:
+          enabled: true

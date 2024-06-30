@@ -1,0 +1,18 @@
+type RegistrationResponse {
+    id: ID!
+    firstName: String
+    secondName: String
+    dateOfBirth: String
+    status: Int!
+}
+
+input RegistrationCreateRequest {
+    firstName: String
+    secondName: String
+    dateOfBirth: String
+}
+
+type Mutation {
+    createRegistration(registrationCreateRequest: RegistrationCreateRequest!): RegistrationResponse!
+    approveRegistration(id: Int): Boolean
+}
