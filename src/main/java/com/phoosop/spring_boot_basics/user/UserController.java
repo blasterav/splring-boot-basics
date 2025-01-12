@@ -1,5 +1,6 @@
 package com.phoosop.spring_boot_basics.user;
 
+import com.phoosop.spring_boot_basics.user.internal.UserResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.ConversionService;
@@ -17,7 +18,7 @@ class UserController {
 
     @QueryMapping
     UserResponse getUserById(@Argument Integer id) {
-        UserDTO userDTO = userService.findFirstById(id);
+        UserDTO userDTO = userService.getById(id);
         return conversionService.convert(userDTO, UserResponse.class);
     }
 

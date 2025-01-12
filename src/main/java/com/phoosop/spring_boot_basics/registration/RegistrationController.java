@@ -1,5 +1,8 @@
 package com.phoosop.spring_boot_basics.registration;
 
+import com.phoosop.spring_boot_basics.common.RegistrationStatus;
+import com.phoosop.spring_boot_basics.registration.internal.model.RegistrationCreateRequest;
+import com.phoosop.spring_boot_basics.registration.internal.model.RegistrationResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.ConversionService;
@@ -19,7 +22,7 @@ class RegistrationController {
 
     @QueryMapping
     RegistrationResponse getRegistrationById(Integer id) {
-        RegistrationDTO registrationDTO = registrationService.findFirstById(id);
+        RegistrationDTO registrationDTO = registrationService.getById(id);
         return conversionService.convert(registrationDTO, RegistrationResponse.class);
     }
 
